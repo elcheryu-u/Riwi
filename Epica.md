@@ -3,7 +3,7 @@
 - Rastreo y comunicación logística
 - Fidelizacion y engagement del cliente
 
-## Features;
+## Features
 ### Guía del comprador:
 - Método de pago. 
 - Catalogo de productos. 
