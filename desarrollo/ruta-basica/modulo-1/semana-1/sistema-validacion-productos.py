@@ -3,6 +3,7 @@ price = None
 amount = None
 discount = None
 discountRange = range(101)
+totalPrice = None
 
 def getName():
     global name
@@ -32,7 +33,6 @@ def getPrice():
                 break
             except ValueError:
                 print('Error, el precio no puede ser un texto.')
-                getPrice()
     
 getPrice()
 
@@ -42,14 +42,50 @@ def getAmount():
     
     try:
         amount = int(amountInput)
-        print('gucci')
+
+        if amount < 1:
+            print('No se puede ingresar esa cantidad.')
+            getAmount()
+        else:
+            print('gucci')
     except ValueError:
         print('No se puede ingresar esa cantidad.')
         getAmount()
         
 getAmount()
 
-print("Información")
-print(f"Nombre: {name}")
-print(f"Precio: {price}")
-print(f"Cantidad: {amount}")
+def getDiscount():
+    global discount
+    global discountRange
+
+    discountInput = int(input("Ingresa el porcentaje de descuento:"))
+
+    if discountInput in discountRange:
+        print('gucci')
+        discount = discountInput
+    else:
+        print('mal ahi pa, repètilo')
+        getDiscount()
+
+getDiscount()
+
+def getPrice():
+    global totalPrice
+
+    totalPerUnitPrice = price * amount
+    discountPrice = totalPerUnitPrice - totalPerUnitPrice * (discount / 100)
+
+    totalPrice = f"{discountPrice:.2f}"
+
+    print(f"Precio total: {price * amount}")
+    print(f"Precio con descuento: {discountPrice:.2f}")
+
+getPrice()
+
+print("=====================================")
+print(f"Producto                     {name} \n")
+print(f"Precio:                      {price}")
+print(f"Cantidad:                    {amount}")
+print(f"Descuento:                   {discount}")
+print(f"Precio Total:                {totalPrice}")
+print("=====================================")
