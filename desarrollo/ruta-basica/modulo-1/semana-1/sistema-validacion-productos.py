@@ -13,7 +13,6 @@ def getName():
         getName()
     else:
         name = nameInput
-        print('gucci: ' + name)
 
 getName()
 
@@ -24,12 +23,10 @@ def getPrice():
     
         try:
             price = int(priceInput)
-            print('guccci')
             break
         except ValueError:
             try:
                 price = float(priceInput)
-                print('gucci')
                 break
             except ValueError:
                 print('Error, el precio no puede ser un texto.')
@@ -41,13 +38,11 @@ def getAmount():
     amountInput = input("Ingresa la cantidad del producto:")
     
     try:
-        amount = int(amountInput)
-
         if amount < 1:
             print('No se puede ingresar esa cantidad.')
             getAmount()
         else:
-            print('gucci')
+            amount = int(amountInput)
     except ValueError:
         print('No se puede ingresar esa cantidad.')
         getAmount()
@@ -61,10 +56,9 @@ def getDiscount():
     discountInput = int(input("Ingresa el porcentaje de descuento:"))
 
     if discountInput in discountRange:
-        print('gucci')
         discount = discountInput
     else:
-        print('mal ahi pa, repètilo')
+        print('mal ahi pa, repétilo')
         getDiscount()
 
 getDiscount()
