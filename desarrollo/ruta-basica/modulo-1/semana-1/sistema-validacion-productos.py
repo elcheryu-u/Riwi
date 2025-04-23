@@ -1,15 +1,25 @@
-name = None
-price = None
-amount = None
-discount = None
+import sys
+
+name = str
+price = float
+amount = int
+discount = int
 discountRange = range(101)
-totalPrice = None
+totalPrice = float
+totalPerUnitPrice = float
+
+def printError(msg):
+    RED = '\033[31m'
+    RESET = '\033[0m'
+    
+    if type(msg) == str:
+        print(f"{RED}Error: {msg}.{RESET}")
 
 def getName():
     global name
     nameInput = input("Ingresa el nombre del producto:")
     if nameInput.isdigit():
-        print('Error, el nombre no puede ser un número.')
+        print('Error, el nombre no puede ser un número')
         getName()
     else:
         name = nameInput
@@ -18,53 +28,62 @@ getName()
 
 def getPrice():
     global price
-    while True:
-        priceInput = input("Ingresa el valor del producto:")
-    
+    while True:        
         try:
-            price = int(priceInput)
+            priceInput = float(input("Ingresa el valor del producto:"))
+            
+            if priceInput < 1:
+                printError('No se puede ingresar esa cantidad')
+                raise TypeError("No negative nums")
+            
+            price = priceInput
             break
+        except TypeError:
+            printError('El número no puede ser negativo')
         except ValueError:
-            try:
-                price = float(priceInput)
-                break
-            except ValueError:
-                print('Error, el precio no puede ser un texto.')
+            printError('Error, el precio no puede ser un texto')
     
 getPrice()
 
 def getAmount():
     global amount
-    amountInput = input("Ingresa la cantidad del producto:")
     
-    try:
-        if amount < 1:
-            print('No se puede ingresar esa cantidad.')
-            getAmount()
-        else:
-            amount = int(amountInput)
-    except ValueError:
-        print('No se puede ingresar esa cantidad.')
-        getAmount()
+    while True:
+        try:
+            amountInput = int(input("Ingresa la cantidad del producto:"))
+            
+            if amountInput < 1:
+                printError('No se puede ingresar esa cantidad')
+                raise TypeError("No negative nums")
+            else:
+                amount = amountInput
+                break     
+        except TypeError:
+            printError('El número no puede ser negativo')
+            
+        except ValueError:
+            printError('No se puede ingresar esa cantidad')
         
 getAmount()
 
 def getDiscount():
     global discount
     global discountRange
-
-    discountInput = int(input("Ingresa el porcentaje de descuento:"))
-
-    if discountInput in discountRange:
-        discount = discountInput
-    else:
-        print('mal ahi pa, repétilo')
-        getDiscount()
+    
+    while True:
+        try:
+            discountInput = int(input("Ingresa el porcentaje de descuento:"))
+            if discountInput in discountRange:
+                discount = discountInput
+                break
+        except ValueError:
+            printError('mal ahi pa, repétilo')
 
 getDiscount()
 
 def getPrice():
     global totalPrice
+    global totalPerUnitPrice
 
     totalPerUnitPrice = price * amount
     discountPrice = totalPerUnitPrice - totalPerUnitPrice * (discount / 100)
@@ -77,9 +96,12 @@ def getPrice():
 getPrice()
 
 print("=====================================")
-print(f"Producto                     {name} \n")
+print(f"Producto:                    {name}")
+print(f"------------------------------------")
 print(f"Precio:                      {price}")
 print(f"Cantidad:                    {amount}")
 print(f"Descuento:                   {discount}")
-print(f"Precio Total:                {totalPrice}")
+print(f"Total:                       {totalPerUnitPrice}")
+print(f"------------------------------------")
+print(f"Total a pagar:               {totalPrice}")
 print("=====================================")
