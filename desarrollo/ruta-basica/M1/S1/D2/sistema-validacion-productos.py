@@ -1,5 +1,3 @@
-import sys
-
 name = str
 price = float
 amount = int
@@ -8,6 +6,7 @@ discountRange = range(101)
 totalPrice = float
 totalPerUnitPrice = float
 
+# Print de color rojo para hacer más visible el error
 def printError(msg):
     RED = '\033[31m'
     RESET = '\033[0m'
