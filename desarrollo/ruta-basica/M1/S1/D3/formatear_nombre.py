@@ -3,7 +3,8 @@ segundo_nombre = ""
 apellido = ""
 
 def printNamesFormatter(names):
-    print(f"\033[32m\n{"="*30} \n {names}\n{"="*30}\33[0m")
+    print(f"\033[32m\n{'='*30} \n {names}\n{'='*30}\033[0m")
+
 
 def addNames():
     global nombre, segundo_nombre, apellido
