@@ -30,12 +30,12 @@ def formatear_nombre(name=None, secondName=None, lastName=None):
     segundo_nombre = '' 
     apellido = ''
     
-    if name: nombre = name.title()
-    if secondName: segundo_nombre = secondName.title()
-    if lastName: apellido = lastName.title()
+    if name: nombre = name.title()  # noqa: E701
+    if secondName: segundo_nombre = secondName.title()  # noqa: E701
+    if lastName: apellido = lastName.title()  # noqa: E701
     
     if not name or not secondName or not lastName:
-        print(f"\033[31mFaltan argumentos, ingresalos manualmente.\033[0m\n")
+        print("\033[31mFaltan argumentos, ingresalos manualmente.\033[0m\n")
         return addNames()
     else:
         return f"{nombre.capitalize()} {segundo_nombre.capitalize()} {apellido.capitalize()}"

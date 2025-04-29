@@ -1,7 +1,8 @@
 nota = -1
 notas = []
  
-printError = lambda x: print(f'\033[31m{x}', end="\033[0m\n") 
+def printError(x):
+    return print(f'\033[31m{x}', end="\033[0m\n") 
 
 def verifyInt(n, restart):
     try:
