@@ -43,14 +43,16 @@ while attemps < 10:
         guess = int(input('\n\n¿Que número crees que es?\n> '))
         attemps += 1
         
-        print(guessMe)
-        
         if guess == guessMe:
-            pass
+            printColor(f"¡Bien hecho! El número era {guess}\n👻 ¡Adios! 👻", "green")
+            break
         else:
-            phrase = f"¡Te pasaste! \nEl número es menor a {guess}" if guess > guessMe else f"Muy por debajo. \nEl número es mayor a {guess}"
+            phrase = f"🔺 ¡Te pasaste! 🔺\nEl número es menor a {guess} 🫡" if guess > guessMe else f"🔻 Muy por debajo 🔻. \nEl número es mayor a {guess} 🤔"
             printColor(f"\n\n{phrase}")
-            print(f"Te quedan \033[33m{10 - attemps}\033[0m intentos restantes.")
+            if 10 - attemps < 1:
+                printColor('\n\nSe te acabaron las oportunidades')
+            else:
+                print(f"Te quedan \033[33m{10 - attemps}\033[0m intentos restantes.")
     except ValueError:
         attemps += 1
         printColor("Error: Solo puede contener números enteros.")
