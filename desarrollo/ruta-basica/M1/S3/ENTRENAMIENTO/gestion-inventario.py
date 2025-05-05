@@ -18,13 +18,30 @@ class colors:
     lightblue = '\033[94m'
     lightcyan = '\033[96m'
 
-# Función para verificar la validez del dato enviado
-# msg: Mensaje a mostrar al momento de pedir el dato
-# type: El tipo de dato que se espera recibir
-# extraValidation: Validación extra por si se necesita verificar algo mas del dato. Por ejemplo, verificar si dato > 5.
-# extraErrorMsg: Mensaje de error a mostrar por si `extraValidation` devuelve error (False)
 def requestValidData(msg, type=str, extraValidation=None, extraErrorMsg="Valor no válido."):
-    """Solicita y valida datos ingresados por el usuario."""
+    """
+    Solicita un dato al usuario, lo convierte al tipo especificado y realiza validaciones adicionales.
+    
+    Parámetros:
+    ----------
+    msg : str
+        Mensaje que se mostrará al usuario al solicitar el dato.
+    type : type, opcional
+        Tipo de dato esperado (por defecto es `str`). Por ejemplo: int, float, etc.
+    extraValidation : function, opcional
+        Función adicional de validación que debe recibir un parámetro (el valor convertido) y devolver True (válido) o False (inválido).
+    extraErrorMsg : str, opcional
+        Mensaje de error personalizado que se mostrará si la validación extra falla.
+        
+    Retorna:
+    -------
+    value : type
+        El valor ingresado por el usuario, convertido y validado correctamente.
+        
+    Ejemplo de uso:
+    --------------
+    edad = requestValidData("Ingresa tu edad", type=int, extraValidation=lambda x: x > 0, extraErrorMsg="La edad debe ser mayor que 0.")
+    """
     while True:
         response = input(f"{colors.blue}{msg}{colors.reset}").strip()
         try:
@@ -186,7 +203,6 @@ def mostrar_menu():
 
 def main():
     while True:
-        print(f"{colors.purple} {inventario} {colors.reset}")
         mostrar_menu()
         opcion = input(f"{colors.lightblue}Elige una opción (1-6): \n> {colors.reset}").strip()
 
