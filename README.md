@@ -1,19 +1,21 @@
 Repositorio de mi proceso en Riwi.
 
-## filename system
+## Estructura del proyecto
 
-### desarrollo/
+```plaintext
+│── desarrollo/
+│───── road-to-semi-senior/
+│───── ruta-basica/
+│───────── M*/
+│──────────── S*/
+│─────────────── D*/
+│─────────────── ENTRENAMIENTO/
+│── habilidades/
+│── ingles/
+```
 
-- **M**: Momento
-- **S**: Semana
-- **D**: Día
-
-#### ruta-basica / **M**<u>*X*</u> / **S**<u>*X*</u> / **D**<u>*X*</u>
+- M: Modúlo
+- S: Semana
+- D: Día (1-5)
 
 *ejemplo: desarrollo/ruta-basica/M1/S1/D2/nombre-archivo.js*
-
-### habilidades/
-
-### ingles/
-
-### reconocimiento/
