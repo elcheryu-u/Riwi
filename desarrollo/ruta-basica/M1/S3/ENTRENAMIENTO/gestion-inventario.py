@@ -140,7 +140,7 @@ def updatePrice():
     
     returnToMenu(updatePrice)
 
-# Función para borrar el precio.
+# Función para borrar el producto.
 def deleteProduct():
     """Flujo para eliminar un producto del inventario."""
     
@@ -211,20 +211,15 @@ def main():
                 addProduct()
             case '2':
                 seeProduct()
-
             case '3':
                 updatePrice()
-
             case '4':
                 deleteProduct()
-
             case '5':
                 calculateTotalValue()
-
             case '6':
                 print(f"{colors.green}¡Hasta luego!{colors.reset}")
                 break
-
             case _:
                 print(f"{colors.red}Opción inválida. Intenta de nuevo.{colors.reset}")
 
