@@ -16,11 +16,6 @@ LIGHTCYAN = '\033[96m'
 def printError(x):
     return print(f'{RED}{x}{RESET}\n') 
 
-        
-def getAverage(ns):    
-    return sum(ns) / len(ns)
-
-
 def continueFn():
     input(f"Presiona {YELLOW}Enter{RESET} para Continuar...\n")
     
