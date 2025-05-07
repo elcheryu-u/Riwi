@@ -1,4 +1,4 @@
-# Variables y Asignación
+# ejemplo.py - Variables y Asignación
 
 # En este archivo veremos cómo declarar variables y modificarlas
 # No resolveremos los ejercicios directamente, solo daremos ejemplos similares.
