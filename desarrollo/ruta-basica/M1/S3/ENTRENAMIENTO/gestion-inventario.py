@@ -96,12 +96,16 @@ def addProduct():
     
     price = requestValidData(
         msg="Precio del producto: $",
-        type=float
+        type=float,
+        extraValidation=lambda n: not n < 0,
+        extraErrorMsg="No puede ser negativo."
     )
     
     amount = requestValidData(
         msg="Cantidad disponible: ",
-        type=int
+        type=int,
+        extraValidation=lambda n: not n < 0,
+        extraErrorMsg="No puede ser negativo."
     )
 
     inventario[name] = (price, amount)
@@ -148,7 +152,7 @@ def deleteProduct():
         msg="Producto a eliminar: "
     )
 
-    actualName = searchProduct(name)
+    actualName = searchProduct(name, True)
 
     if actualName:
         confirm = input(f"{colors.yellow}¿Estás seguro de que deseas eliminar '{actualName}'? (S/N): {colors.reset}").strip().lower()
