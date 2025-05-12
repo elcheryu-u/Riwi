@@ -4,10 +4,10 @@
 
 ## 🗓️ Módulo 1 – Fundamentos de Python
 
-* **Tema 1:** Introducción a Python: Tipos de datos básicos (`int`, `float`, `str`, `bool`)
-* **Tema 2:** Variables, asignación y convenciones de nombres
-* **Tema 3:** Entrada y salida de datos (`input()` y `print()`)
-* **Tema 4:** Operadores matemáticos y de comparación
+* [**Tema 1:** Tipos de datos básicos](./1-Fundamentos/1_TiposDatosBasicos/README.md)
+* [**Tema 2:** Variables y Asignación](./1-Fundamentos/2_VariablesAsignacion/README.md)
+* [**Tema 3:** Entrada y salida de datos en Python](./1-Fundamentos/3_EntradaSalida/README.md)
+* [**Tema 4:** Operadores matemáticos y de comparación](./1-Fundamentos/4_OperadoresMatematicosComparacion/README.md)
 * **Tema 5:** Condicionales: `if`, `else`, `elif`
 * **Tema 6:** Conversión de tipos y errores comunes
 * **Tema 7:** Desafío y repaso del módulo

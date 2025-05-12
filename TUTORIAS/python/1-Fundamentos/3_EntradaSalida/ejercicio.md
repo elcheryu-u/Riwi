@@ -1,6 +1,6 @@
 # 🧪 Ejercicios Tema 3 – Entrada y salida de datos (input y print)
 
-*Recuerda realizar los ejercicios por tu propia cuenta, trata de no buscar información por internet ni utilizar IA's. Si necesitas ayuda, en esta misma carpeta se encuentra un archivo ejemplo.py para que veas casos de uso.*
+*Recuerda realizar los ejercicios por tu propia cuenta, trata de no buscar información por internet ni utilizar IA's. Si necesitas ayuda, en esta misma carpeta se encuentra un archivo [ejemplo.py](./ejemplo.py) para que veas casos de uso.*
 
 Estos ejercicios te ayudarán a practicar cómo recibir datos del usuario con `input()` y cómo mostrarlos en pantalla con `print()`.
 

@@ -32,7 +32,7 @@ Cada lenguaje en este repositorio (comenzamos con `python/`) está organizado de
 * Para cada tema se propone:
     * Documentación clara (en `README.md`)
     * Uno o más ejemplos comentados (en `ejemplo.py`)
-    * Un ejercicio práctico (en `ejercicio.md`)
+    * Uno o más ejercicios prácticos (en `ejercicio.md`)
 * Al final de cada módulo hay un **desafío** que integra los temas vistos.
 * Puedes estudiar a tu ritmo, aunque se recomienda seguir los temas en orden dentro de cada módulo.
 
@@ -40,11 +40,14 @@ Cada lenguaje en este repositorio (comenzamos con `python/`) está organizado de
 
 ## 🧭 Sugerencias para estudiantes
 
-* **Lee primero la documentación** del tema antes de tocar el código.
+* **Lee primero la documentación** del tema antes de tocar el código. (`README.md`)
 * **Ejecuta y modifica los ejemplos** para entenderlos mejor.
 * **Resuelve los ejercicios sin mirar la solución**, y luego compáralos.
 * Si algo no sale, **no te frustres**, es parte del proceso de aprender.
 * Guarda tus propios apuntes, errores y descubrimientos.
+
+*Si terminas con los ejercicios y te gustaria una revisión ¡puedes contactarme!*
+*contacto.sergiocortes@gmail.com*
 
 ---
 

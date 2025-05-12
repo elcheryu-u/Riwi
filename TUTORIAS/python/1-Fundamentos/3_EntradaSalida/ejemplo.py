@@ -1,4 +1,4 @@
-# Tema 3: Entrada y salida de datos
+# ejemplo.py - Tema 3: Entrada y salida de datos
 
 # Ejemplo relacionado al ejercicio 1: presentación
 # En lugar de pedir el nombre del usuario, aquí usamos un nombre ficticio

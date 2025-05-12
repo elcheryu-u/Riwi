@@ -1,6 +1,6 @@
 # 🧪 Ejercicios Tema 2 – Variables y Asignación
 
-*Recuerda realizar los ejercicios por tu propia cuenta, trata de no buscar información por internet ni utilizar IA's. Si necesitas ayuda, en esta misma carpeta se encuentra un archivo ejemplo.py para que veas casos de uso.*
+*Recuerda realizar los ejercicios por tu propia cuenta, trata de no buscar información por internet ni utilizar IA's. Si necesitas ayuda, en esta misma carpeta se encuentra un archivo [ejemplo.py](./ejemplo.py) para que veas casos de uso.*
 
 A continuación, encontrarás ejercicios para practicar el uso de variables en Python. Intenta resolverlos por tu cuenta antes de ver la solución.
 

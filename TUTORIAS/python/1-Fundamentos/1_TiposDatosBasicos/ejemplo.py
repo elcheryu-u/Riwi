@@ -1,4 +1,4 @@
-# Tipos de datos básicos en Python
+# ejemplo.py - Tipos de datos básicos en Python
 
 # En este ejemplo veremos cómo usar los tipos de datos básicos en Python:
 # int, float, str y bool.

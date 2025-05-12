@@ -1,6 +1,6 @@
 # 🧪 Ejercicios – Tema 1: Tipos de datos básicos en Python
 
-*Recuerda realizar los ejercicios por tu propia cuenta, trata de no buscar información por internet ni utilizar IA's. Si necesitas ayuda, en esta misma carpeta se encuentra un archivo ejemplo.py para que veas casos de uso.*
+*Recuerda realizar los ejercicios por tu propia cuenta, trata de no buscar información por internet ni utilizar IA's. Si necesitas ayuda, en esta misma carpeta se encuentra un archivo [ejemplo.py](./ejemplo.py) para que veas casos de uso.*
 
 En este conjunto de ejercicios, pondrás en práctica los tipos de datos básicos en Python: `int`, `float`, `str` y `bool`. Asegúrate de entender cada tipo antes de resolver los retos.
 
