@@ -43,7 +43,7 @@ def printProduct(product=None):
     # x = character for use to separate 
     # y = character length
     # z = character length multiplier
-    print_separators = lambda x, y, z=1: f"{x}" * (y * z)
+    print_separators = lambda x, y, z=1: f"{x}" * (y * z)  # noqa: E731
     
     if (product):
         name_length = len(product['name'])
@@ -192,7 +192,7 @@ def updateProduct():
                 type=int
             )
             
-            if option == 4: break
+            if option == 4: break  # noqa: E701
             
             option_types = [
                 { 'value': 'name', 'type': str },
@@ -203,7 +203,7 @@ def updateProduct():
             # Store the `text`, `type` and `index` for reuse
             current_option = ("Ingresa el nuevo valor", option_types[option - 1]['value'], option_types[option - 1]['type'], option -1)
             
-            response = validateInput(current_option[0], current_option[2]) if option_types[current_option[3]]['type'] == str else noNegativeNumbers(current_option[0], current_option[2])
+            response = validateInput(current_option[0], current_option[2]) if option_types[current_option[3]]['type'] == str else noNegativeNumbers(current_option[0], current_option[2])  # noqa: E721
             
             # Copy of a product from inventory
             product_updated = inventory[update_product['index']]
@@ -215,7 +215,7 @@ def updateProduct():
             inventory[update_product['index']] = product_updated
     
     else:
-        print(f'No se encontro el producto {update_product['nombre']}')
+        print(f"No se encontro el producto {update_product['nombre']}")
         continueFn()
     
 # Delete a product

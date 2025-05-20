@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="layout">
+        <header class="header">
+            <div class="header_layout">
+                <div>
+                    <img 
+                        src="https://i.pinimg.com/736x/50/5e/9f/505e9f907798a9ce519f53eee00674ef.jpg"
+                        alt=""    
+                    />
+                </div>
+                <label aria-label="Abrir menú" class="menu" for="toggle-nav">☰</label>
+                <input class="menu-input" hidden type="checkbox" id="toggle-nav" />
+                <div class="backdrop"></div>
+                <nav class="navigation" role="navigation">
+                    <label aria-label="Cerrar menú" class="menu" style="width: 100%;gap: 1rem;justify-content: flex-start;margin-bottom: 1rem;" for="toggle-nav">✖ <span style="font-size: 1rem;">Cerrar</span></label>
+                    <a href="./index.html">Inicio</a>
+                    <a href="./about.html">Acerca de</a>
+                    <a href="./contacto.html" class="active">Contacto</a>
+                </nav>
+            </div>
+        </header>
+        <section class="contact-section">
+            <h1>Contáctame</h1>
+            <form class="contact-form">
+                <div>
+                    <label for="nombre">*Nombre</label>
+                    <input id="nombre" minlength="4" placeholder="Ingresa tu nombre" required/>
+                    <span class="msg-error">Mínimo 4 carácteres</span>
+                </div>
+                <div>
+                    <label for="email">*Correo electrónico</label>
+                    <input type="email" id="email" placeholder="Ingresa tu correo" required/>
+                    <span class="msg-error">Tiene que ser un correo</span>
+                </div>
+                <div>
+                    <label for="asunto">*Asunto</label>
+                    <input id="asunto" placeholder="Ingresa tu asunto" required/>
+                    <span class="msg-error">Obligatorio</span>
+                </div>
+                <div>
+                    <label for="mensaje">*Mensaje</label>
+                    <textarea id="mensaje" minlength="20" placeholder="Escribe tu mensaje" required></textarea>
+                    <span class="msg-error">Mínimo 20 carácteres</span>
+                </div>
+                <div class="divider"></div>
+                <button type="submit" class="btn">Enviar mensaje</button>
+            </form>
+        </section>
+        <footer class="footer"></footer>
+    </div>
+</body>
+</html>

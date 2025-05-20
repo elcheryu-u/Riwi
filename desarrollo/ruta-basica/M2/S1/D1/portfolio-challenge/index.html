@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="layout">
+        <header class="header">
+            <div class="header_layout">
+                <div>
+                    <img 
+                        src="https://i.pinimg.com/736x/50/5e/9f/505e9f907798a9ce519f53eee00674ef.jpg"
+                        alt=""    
+                    />
+                </div>
+                <label aria-label="Abrir menú" class="menu" for="toggle-nav">☰</label>
+                <input class="menu-input" hidden type="checkbox" id="toggle-nav" />
+                <div class="backdrop"></div>
+                <nav class="navigation" role="navigation">
+                    <label aria-label="Cerrar menú" class="menu" style="width: 100%;gap: 1rem;justify-content: flex-start;margin-bottom: 1rem;" for="toggle-nav">✖ <span style="font-size: 1rem;">Cerrar</span></label>
+                    <a href="./index.html" class="active">Inicio</a>
+                    <a href="./about.html">Acerca de</a>
+                    <a href="./contacto.html">Contacto</a>
+                </nav>
+            </div>
+        </header>
+        <section class="hero">
+            <h1>Mi <br/>portafolio</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae dolores enim voluptas quod quo qui doloribus! Repellat nesciunt, voluptatem, error et nulla quibusdam similique ex, illo libero fugit exercitationem tenetur?</p>
+            <a class="btn" href="./about.html">Conoce más</a>
+        </section>
+        <footer class="footer"></footer>
+    </div>
+</body>
+</html>
