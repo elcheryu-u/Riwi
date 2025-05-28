@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <meta name="description" content="Personal portfolio of Sergio Corets as a Riwi developer." >
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sergio Cortes - Riwi Developer</h1>
+        <nav>
+            <a href="#about-me">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section id="about-me">
+        <h2>About Me</h2>
+        <p>Hi, I'm Sergio Cortes</p>
+        <p>I'm passionate about building visually appealing and functional websites, and I'm always looking for ways to sharpen my skills.</p>
+        <p>I enjoy experimenting with different styles, trying out new ideas, and writing reusable code.</p>
+        <p>Also, I like cats.</p>
+    </section>
+    <img src="./photo.jpg" alt="Sergio Cortes's photo"  width="200" />
+    <section>
+        <h2>Habilities</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS
+                <ul>
+                    <li>SASS</li>
+                    <li>Tailwind</li>
+                    <li>Styled Components</li>
+                </ul>
+            </li>
+            <li>JavaScript
+                <ul>
+                    <li>Vite</li>
+                    <li>React</li>
+                    <li>Next.js</li>
+                    <li>Node.js</li>
+                </ul>
+            </li>
+            <li>TypeScript</li>
+            <li>Python</li>
+        </ul>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div>
+            <div class="card-project">
+                <img src="./project1.png" alt="" width="300">
+                <div>
+                    <h3>Vandlee Docs</h3>
+                    <p>In this project I want to teach programming through documentation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-body">
+            <table>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Technologies Used</th>
+                    <th>Link</th>
+                </tr>
+                <tr>
+                    <td>Vandlee Docs</td>
+                    <td>Next.js</td>
+                    <td><a href="https://docs.vandlee.com/" target="_blank" rel="noreferrer noopener">View Project</a></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact me</h2>
+        <form action="/send" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Send" />
+        </form>
+    </section>
+    <footer>
+        <a href="https://github.com/elcheryu-u" target="_blank" rel="noreferrer noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sergiocortes-dev/" target="_blank" rel="noreferrer noopener">Linkedin</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flexbox: Diseño Flexible</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <h1>Barra de Navegación con Flexbox</h1>
+
+  <div class="axis">
+      <div class="main-axis">
+        <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M208.536 113.536C210.488 111.583 210.488 108.417 208.536 106.464L176.716 74.6447C174.763 72.692 171.597 72.692 169.645 74.6447C167.692 76.5973 167.692 79.7631 169.645 81.7157L197.929 110L169.645 138.284C167.692 140.237 167.692 143.403 169.645 145.355C171.597 147.308 174.763 147.308 176.716 145.355L208.536 113.536ZM15 110V115H205V110V105H15V110Z" fill="currentColor"/>
+        </svg>
+          <span>justify-content</span>
+      </div>
+      <div class="cross-axis">
+        <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M208.536 113.536C210.488 111.583 210.488 108.417 208.536 106.464L176.716 74.6447C174.763 72.692 171.597 72.692 169.645 74.6447C167.692 76.5973 167.692 79.7631 169.645 81.7157L197.929 110L169.645 138.284C167.692 140.237 167.692 143.403 169.645 145.355C171.597 147.308 174.763 147.308 176.716 145.355L208.536 113.536ZM15 110V115H205V110V105H15V110Z" fill="currentColor"/>
+        </svg>
+          <span>align-items</span>
+      </div>
+  </div>
+
+  <input id="background" name="background" style="width: auto;" type="checkbox" />
+  <label for="background">Mostrar contenedor</label>
+
+  <nav class="navbar">
+    <a href="#">🏠Inicio</a>
+    <a href="#">🔍Servicios</a>
+    <a href="#">📕Proyectos</a>
+    <a href="#">📞Contacto</a>
+    <div class="background"></div>
+  </nav>
+
+  <p id="current-values" style="margin: 1rem 0; font-weight: bold;">
+    Dirección: row | Justificación: center | Alineación: center
+  </p>
+  
+  <div class="controls">
+    <section>
+      <h3>flex-direction</h3>
+      <div>
+        <button data-prop="flexDirection" data-value="row">row</button>
+        <button data-prop="flexDirection" data-value="column">column</button>
+        <button data-prop="flexDirection" data-value="row-reverse">row reverse</button>
+        <button data-prop="flexDirection" data-value="column-reverse">column reverse</button>
+      </div>
+    </section>
+
+    <section>
+      <h3>justify-content</h3>
+      <div>
+        <button data-prop="justifyContent" data-value="flex-start">flex-start</button>
+        <button data-prop="justifyContent" data-value="center">center</button>
+        <button data-prop="justifyContent" data-value="flex-end">flex-end</button>
+        <button data-prop="justifyContent" data-value="space-between">space-between</button>
+        <button data-prop="justifyContent" data-value="space-around">space-around</button>
+        <button data-prop="justifyContent" data-value="space-evenly">space-evenly</button>
+      </div>
+    </section>
+
+    <section>
+      <h3>align-items</h3>
+      <div>
+        <button data-prop="alignItems" data-value="flex-start">flex-start</button>
+        <button data-prop="alignItems" data-value="center">center</button>
+        <button data-prop="alignItems" data-value="flex-end">flex-end</button>
+        <button data-prop="alignItems" data-value="stretch">stretch</button>
+      </div>
+    </section>
+
+    <section class="global-controls">
+      <h3>Controles globales</h3>
+      <label>
+        flex-grow
+        <input type="number" id="global-flex-grow" value="0" />
+      </label>
+      <label>
+        flex-shrink
+        <input type="number" id="global-flex-shrink" value="0" />
+      </label>
+      <label>
+        flex-basis
+        <input type="text" id="global-flex-basis" value="auto" />
+      </label>
+    </section>
+    
+    <section>
+      <h3>Controles individuales</h3>
+      <div class="link-controls"></div>
+    </section>
+  </div>
+
+
+
+  <script>
+    const buttons = document.querySelectorAll("button[data-prop][data-value]");
+    const navbar = document.querySelector(".navbar");
+    const links = navbar.querySelectorAll("a");
+
+    const currentValuesParagraph = document.getElementById("current-values");
+
+    // Función para actualizar el párrafo con los valores actuales
+    function updateCurrentValues() {
+      const direction = navbar.style.flexDirection || "row";
+      const justify = navbar.style.justifyContent || "center";
+      const align = navbar.style.alignItems || "center";
+
+      currentValuesParagraph.textContent = `Dirección: ${direction} | Justificación: ${justify} | Alineación: ${align}`;
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const prop = button.getAttribute("data-prop");
+        const value = button.getAttribute("data-value");
+        const target = button.getAttribute("data-target") || "navbar"; // por defecto, navbar
+
+        if (target === "navbar") {
+          navbar.style[prop] = value;
+
+          if (prop === 'flexDirection') {
+            const axis = document.querySelector(".axis");
+            axis.classList.remove("row", "row-reverse", "column", "column-reverse");
+            axis.classList.add(value);
+          }
+
+          updateCurrentValues();
+
+        } else if (target === "links") {
+          links.forEach(link => {
+            link.style[prop] = value;
+          });
+        }
+      });
+    });
+
+    const controlsContainer = document.querySelector(".link-controls");
+    const flexProps = ["flexGrow", "flexShrink", "flexBasis"];
+
+    links.forEach((link, index) => {
+      const wrapper = document.createElement("div");
+      wrapper.innerHTML = `<h4>Controles para Enlace ${index + 1}</h4>`;
+
+      flexProps.forEach(prop => {
+        const label = document.createElement("label");
+        label.innerText = prop;
+        label.style.display = "flex";
+        label.style.flexDirection = "column";
+        label.style.marginBottom = "8px";
+
+        const input = document.createElement("input");
+        input.type = prop === "flexBasis" ? "text" : "number";
+        input.value = prop === "flexBasis" ? "auto" : 0;
+
+        input.dataset.index = index;
+        input.dataset.prop = prop;
+
+        // Aplica el valor al enlace correspondiente
+        input.addEventListener("input", () => {
+          const target = links[Number(index)];
+          const grow = getValue("flexGrow", index);
+          const shrink = getValue("flexShrink", index);
+          const basis = getValue("flexBasis", index);
+          target.style.flex = `${grow} ${shrink} ${basis}`;
+        });
+
+        label.appendChild(input);
+        wrapper.appendChild(label);
+      });
+
+      controlsContainer.appendChild(wrapper);
+    });
+
+    // Función auxiliar para obtener valor actual del input
+    function getValue(prop, index) {
+      const input = document.querySelector(
+        `input[data-index="${index}"][data-prop="${prop}"]`
+      );
+      return input ? input.value.trim() : (prop === "flexBasis" ? "auto" : "0");
+    }
+
+    // Inputs globales
+    const globalGrow = document.getElementById("global-flex-grow");
+    const globalShrink = document.getElementById("global-flex-shrink");
+    const globalBasis = document.getElementById("global-flex-basis");
+
+    // Función para aplicar estilos globales a todos los <a>
+    function applyGlobalFlex() {
+      const grow = globalGrow.value.trim() || "1";
+      const shrink = globalShrink.value.trim() || "1";
+      const basis = globalBasis.value.trim() || "auto";
+
+      links.forEach(link => {
+        link.style.flex = `${grow} ${shrink} ${basis}`;
+      });
+    }
+
+    // Escuchamos cambios en los inputs
+    [globalGrow, globalShrink, globalBasis].forEach(input => {
+      input.addEventListener("input", applyGlobalFlex);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+*{
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  padding: 2rem;
+  background: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+input {
+  width: 7.5rem;
+  padding: .75rem;
+  border-radius: 11.6px;
+  border: 1px solid #bbb;
+}
+
+label{
+  user-select: none;
+}
+
+.axis{
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  position: sticky;
+  top: 1rem
+}
+
+.main-axis,
+.cross-axis{
+  background: #fff;
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 11.6px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.main-axis svg,
+.cross-axis svg {
+  width: 3rem;
+  height: 3rem;
+  transition: .3s ease all;
+}
+.main-axis svg {
+  color: rgb(88, 88, 255);
+}
+
+.cross-axis svg {
+  color: red;
+  rotate: 90deg;
+}
+
+
+.axis.row svg,
+.axis.row-reverse .cross-axis svg{
+  transform: rotate(0)
+}
+
+.axis.column svg{
+  transform: rotate(90deg)
+}
+
+.axis.row-reverse svg{
+  transform: rotate(180deg)
+}
+
+.axis.column-reverse svg,
+.axis.column .cross-axis svg{
+  transform: rotate(270deg)
+}
+
+.axis.column ~ .navbar,
+.axis.column-reverse ~ .navbar {
+  min-height: 25rem
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 8rem;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  background-color: #222;
+  padding: 1rem;
+  border-radius: 10px;
+  min-height: 8rem;
+  gap: 1rem; /* Añade espacio entre los ítems */
+  transition: all 0.5s ease; /* Aunque no animará justify, ayuda con otras props */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  background-color: #444;
+  border-radius: 5px;
+  z-index: 1;
+  position: relative;
+  transition: .3s ease all;
+} 
+
+
+.navbar a:hover {
+  background-color: #555;
+}
+
+.navbar .background{
+  position: absolute;
+  background: transparent;
+  transition: .2s ease all;
+  inset: 1rem;
+  z-index: 0;
+}
+
+.controls {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+}
+
+.controls h3 {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+
+button {
+  margin: 0.2rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: #0077ff;
+  color: white;
+  border-radius: 11.6px;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+button:hover {
+  background-color: #005fd1;
+}
+
+#background:checked ~ .navbar .background {
+  background-color: brown;
+}
+
+.link-controls{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.link-controls > div {
+  display: flex;
+  gap: 1rem;
+}
