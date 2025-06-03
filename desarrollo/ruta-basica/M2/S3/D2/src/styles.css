@@ -1,0 +1,340 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+@font-face {
+  font-family: 'gilroy';
+  src: url('../assets/fonts/Gilroy-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gilroy';
+  src: url('../assets/fonts/Gilroy-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gilroy';
+  src: url('../assets/fonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gilroy';
+  src: url('../assets/fonts/Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gilroy';
+  src: url('../assets/fonts/Gilroy-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gilroy';
+  src: url('../assets/fonts/Gilroy-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Italic versions */
+
+@font-face {
+  font-family: 'gilroy';
+  src: url('../assets/fonts/Gilroy-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'gilroy';
+  src: url('../assets/fonts/Gilroy-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'gilroy';
+  src: url('../assets/fonts/Gilroy-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+} 
+
+:root {
+    --color-one: #F9F1F0;
+    --color-two: #FADCD9;
+    --color-three: #F8AFA6;
+    --color-four: #000000 ;
+    --border-radius: 1.25rem;
+    --gap: 1.5rem;
+}
+
+html{
+    font-size: 16px;
+    font-family: 'gilroy';
+    font-weight: 400;
+}
+
+body {
+    padding: 1.5rem;
+    background: var(--color-one);
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+}
+
+strong {
+    font-weight: 700;
+}
+
+a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--color-four);
+    text-transform: uppercase;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+header{
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-two);
+    border-radius: var(--border-radius);
+    position: sticky;
+    top: 1.5rem;
+    z-index: 99;
+    margin-bottom: var(--gap);
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-transform: uppercase;
+}
+header h1 span:nth-child(1){
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.6625rem;
+}
+header h1 span:nth-last-child(1) {
+    font-weight: 500;
+}
+header nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* CONTENT */
+
+.basic-card{
+    padding: var(--gap);
+    border-radius: var(--border-radius);
+    background: var(--color-two);
+    overflow: hidden;
+    position: relative;
+}
+
+.content {
+    display: flex;
+    gap: var(--gap);
+}
+
+.content > * {
+    flex: 1;
+}
+
+.content #cards {
+    flex: .675;
+}
+
+.content .sidebar {
+    flex: .325;
+    display: flex;
+    flex-flow: column;
+    gap: var(--gap);
+}
+
+.content #sidebar > * {
+    background: var(--color-two);
+}
+
+#cards {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gap);
+}
+
+
+#cards #presentation,
+#cards #description,
+#cards #contact {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    gap: var(--gap);
+}
+
+#cards #photo {
+    padding: 0;
+}
+
+/* PRESENTATION */
+
+#cards #presentation {
+    grid-column: 1 / 9;
+}
+
+
+#cards #presentation h2 {
+    font-size: 3.5rem;
+}
+
+#cards #presentation img {
+    width: 119px;
+    aspect-ratio: 1 / 1;
+    margin-left: auto;
+}
+
+/* PHOTO */
+
+#cards #photo {
+    grid-column: 9 / 13;
+}
+
+#cards #photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#cards #description {
+    grid-column: 1 / 7;
+}
+
+#cards #contact {
+    grid-column: 7 / 13;
+    background: var(--color-three);
+}
+
+/* DESCRIPTION */ 
+
+#cards #description {
+    font-size: 1.25rem;
+}
+
+#cards #description img {
+    width: 38px;
+    aspect-ratio: 1 / 1;
+}
+
+/* CONTACT */
+
+#cards #contact h6 {
+    font-weight: 300;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#cards #contact h2 {
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+/* SIDEBAR */ 
+
+.sidebar > section {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    background: var(--color-two);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    padding: var(--gap);
+}
+
+.sidebar section h3 {
+    font-weight: 500;
+    font-size: 1.6625rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar section .card {
+    border-bottom: 2px solid;
+    border-color: var(--color-three);
+    padding-block: var(--gap);
+    display: flex;
+    flex-flow: column;
+    gap: var(--gap);
+}
+
+.sidebar section .card:nth-last-child(1) {
+    border-color: transparent;
+}
+
+.sidebar section .card img {
+    object-fit: cover;
+    aspect-ratio: 399 / 269;
+    object-position: bottom;
+    border-radius: calc(var(--border-radius) / 2);
+    overflow: hidden;
+}
+
+.sidebar footer {
+    height: max-content;
+}
+
+.sidebar footer ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1156px) {
+    .content {
+        flex-direction: column;
+    }
+    .content .sidebar {
+        flex-direction: row;
+    }
+    .content .sidebar > * {
+        flex: 1;
+    }
+}
+
+
+@media only screen and (max-width: 660px) {
+    #cards > * {
+        grid-column: 1 / span 12 !important;
+    }
+    .content .sidebar {
+        flex-direction: column;
+    }
+}
